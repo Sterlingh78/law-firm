@@ -1,0 +1,177 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* BODY  */
+body {
+    display: grid;
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* HEADER  */
+div#headerWrapper {
+    background-color: red;
+    grid-row-start: 1;
+}
+header {
+    border-top: 1px solid $secondaryColor;
+    display: grid;
+    grid-template-columns: 51px auto 44px;
+    align-items: center;
+	padding: .5rem 2vw;
+	h1 {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        padding-left: .5rem;
+        color: $primaryColor;
+    }
+    div#phone {
+        display: none;
+    }
+} // end header
+
+/* NAVIGATION STUFF GOES HERE  */
+div#navWrapper {
+    grid-row-start: 4;
+}
+div#hamburger a, div#closex a {
+    display: block;
+    padding: .8rem 2vw;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    text-align: right;
+}
+div#closex a {
+    margin-right: 2vw;
+}
+nav {
+    height: 100vh;
+    ul {
+        border-bottom: 1px solid #eee;
+    }
+    ul li {
+        border-top: 1px solid #eee;
+    }
+    ul li a{
+        display: block;
+        color: #333;
+        padding: .9rem 2vw;
+        text-decoration: none;
+        text-align:right;
+    }
+    ul li a:hover {
+        color: $primaryColor;
+    }
+    ul li.active a {
+        background-color: lighten($primaryColor, 45%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MAIN  */
+div#mainWrapper {
+    grid-row-start: 2;
+}
+main {
+    div.flexed div {
+        text-align: center;
+    }
+ 	div.flexed div img {
+         width: 100%;
+    }
+    div.flexed div button {
+        display: block;
+        border: 1px solid black;
+        padding: .35em 1.2em;
+        margin: auto;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+    button.action {
+        border: 1px solid black;
+        padding: .35em 1.2em;
+        margin: .5rem auto;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+    button.blog {
+        width: 100%;
+    }
+} // end main
+
+
+
+/* FOOTER  */
+#footerWrapper {
+    grid-row-start: 3;
+    background-color: #1b1b1b; 
+}
+footer {
+    font-size: .85rem;
+	padding: 1rem 0;
+	color: #bbb;
+	text-align: center;
+	a{color: #eee;}
+}
+div.social {
+    background-color: black;
+    display: flex;
+    padding: 1rem 0;
+}
+div.social a {
+    flex-basis: 25%;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+div.social a:hover {
+    color: orange;
+}
+/* COLUMNS  */
+div.flexed {
+    display: flex;
+    flex-wrap: wrap;
+}
+.column {
+    padding: 0 $gutter;
+}
+.jumbotron {
+    background-color: $accent;
+    color: white;
+    p {
+        font-size: 200%;
+        padding: 2rem 0;
+    }
+}
+@for $i from 1 through 12 {
+    $w:($i/12) * 100%;
+    .small-#{$i} {flex-basis: $w;}
+} // end loop
