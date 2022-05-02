@@ -51,3 +51,9 @@ div#footerWrapper {
     $w:($i/12) * 100%;
     .medium-#{$i} {flex-basis: $w;}
 } // end loop
+
+main {
+    button.action {
+        max-width: 300px;
+    }
+}

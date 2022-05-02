@@ -28,8 +28,8 @@ header {
 	h1 {
         font-size: 1.6rem;
         font-weight: $lightWeight;
-        padding-left: .5rem;
-        color: $primaryColor;
+        padding-left: 3rem;
+        color: $secondaryColor;
     }
     div#phone {
         display: none;
@@ -99,6 +99,7 @@ div#mainWrapper {
 main {
     div.flexed div {
         text-align: center;
+        margin-bottom: 1rem;
     }
  	div.flexed div img {
          width: 100%;
